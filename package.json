@@ -1,6 +1,7 @@
 {
     "private": true,
     "scripts": {
+        "start": "node redis-server/server.js",
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
@@ -21,5 +22,12 @@
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
         "vue": "^2.5.17"
+    },
+    "dependencies": {
+        "express": "^4.16.4",
+        "ioredis": "^4.6.2",
+        "redis": "^2.8.0",
+        "socket.io": "^2.2.0",
+        "socket.io-client": "^2.2.0"
     }
 }
