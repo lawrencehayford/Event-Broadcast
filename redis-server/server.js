@@ -5,7 +5,7 @@ var Redis = require("ioredis");
 var redis = new Redis();
 
 //subscribe to messages on channel in laravel app
-redis.subscribe("new-user", function(err, count) {
+redis.subscribe("user", function(err, count) {
     console.log(count, " subcribed to this channel");
 });
 
@@ -13,7 +13,7 @@ redis.on("message", function(channel, message) {
     console.log("Message Recieved: " + message);
     //parse data and emit on channel 'new-user'
     message = JSON.parse(message);
-    io.emit("new-user", message);
+    io.emit("user-channel-" + message.id, message);
 });
 
 //listen to node app on server 3000

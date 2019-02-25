@@ -5,7 +5,7 @@
   socket.on('connect', function(){
     console.log("socket connected");
   });
-  socket.on('new-user', function(data){
+  socket.on('user-channel-1', function(data){
       console.log(data);
   });
   socket.on('disconnect', function(){

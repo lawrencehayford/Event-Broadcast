@@ -39,8 +39,9 @@ class RedisSubscribe extends Command
     public function handle()
     {
         //
-        Redis::subscribe(['new-user'], function ($message) {
+        Redis::subscribe(['user'], function ($message) {
             return $message;
         });
+
     }
 }

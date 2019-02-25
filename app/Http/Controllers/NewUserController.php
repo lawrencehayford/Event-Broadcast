@@ -15,6 +15,6 @@ class NewUserController extends Controller
             "name" => "Lawrence",
             "Age" => 20,
         ];
-        Redis::publish('new-user', json_encode($userData));
+        Redis::publish('user', json_encode($userData));
     }
 }
